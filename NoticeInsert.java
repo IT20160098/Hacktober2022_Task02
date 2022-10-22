@@ -6,7 +6,7 @@ import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -35,7 +35,7 @@ boolean isTrue;
 			String Title = request.getParameter("tit");
 
 			
-			isTrue = NoticeDBUtil.validate(Title)
+			isTrue = NoticeDBUtil.validate(Title);
 			
 			if (isTrue = true) {
 				List<Notice> noticeDetails = NoticeDBUtil.getNotice(Title);
@@ -48,7 +48,7 @@ boolean isTrue;
 				dis2.forward(request, response);
 			}
 			
-		} else 
+		} else {
 			RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");
 			dis2.forward(request, response);
 		}
